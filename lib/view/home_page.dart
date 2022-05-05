@@ -41,26 +41,29 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
     // 状態が変化するたびに再ビルドする
-    final todoProvider = ref.watch(todoDatabaseProvider);
+    final _todoDatabaseProvider = ref.watch(todoDatabaseProvider);
 
     // メソッドや値を取得する
-    final todoNotifierProvider = ref.watch(todoDatabaseProvider.notifier);
+    final _todoDatabaseNotifier = ref.watch(todoDatabaseProvider.notifier);
 
     // 追加画面を閉じたら再ビルドするために使用する
-    List<TodoItemData> todoItems = todoNotifierProvider.state.todoItems;
+    List<TodoItemData> _todoItems = _todoDatabaseNotifier.state.todoItems;
 
     // コントローラ
-    final textController = TextEditingController();
+    final _textController = TextEditingController();
 
     // Providerの監視
     final _darkModeProvider = ref.watch(darkModeProvider);
     final _darkModeNotifier = ref.watch(darkModeProvider.notifier);
 
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: SafeArea(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        temp = temp.copyWith(title: '');
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
           bottom: false,
           child: Stack(
             children: [
@@ -186,9 +189,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   child: TextField(
                                     maxLength: null,
                                     keyboardType: TextInputType.multiline,
-                                    controller: textController,
+                                    controller: _textController,
                                     onChanged: (value) {
                                       temp = temp.copyWith(title: value);
+                                      print(_textController.text);
                                     },
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -229,8 +233,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: cardButton(() async {
-                                  await todoNotifierProvider.writeData(temp);
+                                  await _todoDatabaseNotifier.writeData(temp);
                                   HapticFeedback.heavyImpact();
+                                  temp = temp.copyWith(title: '');
                                 }, Icons.add, kIconAddColor(_darkModeProvider)),
                               ),
                             ],
@@ -243,7 +248,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 7.3),
                       child: ListView(
-                        children: allCard(todoItems, todoNotifierProvider),
+                        children: allCard(_todoItems, _todoDatabaseNotifier),
                       ),
                     ),
                   ),
