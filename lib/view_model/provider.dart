@@ -5,8 +5,8 @@ import 'package:poimemo/model/freezed/todo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // DBの操作を行うクラス （dbの操作にstateを絡める）
-class TodoDatabaseNotifier extends StateNotifier<poimemotateData> {
-  TodoDatabaseNotifier() : super(poimemotateData());
+class TodoDatabaseNotifier extends StateNotifier<TodoData> {
+  TodoDatabaseNotifier() : super(TodoData());
 
   final _db = MyDatabase(); //DBへの操作を行う
 

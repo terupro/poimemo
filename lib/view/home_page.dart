@@ -94,153 +94,162 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               Column(
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    child: Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.only(
-                        top: 10,
-                        bottom: 20,
-                        right: 17,
-                        left: 17,
-                      ),
-                      decoration: BoxDecoration(
-                        color: kCardColor(_darkModeProvider),
-                        borderRadius: kMainBorderRadius,
-                        boxShadow: [
-                          BoxShadow(
-                            offset: const Offset(4, 4),
-                            color: kCardTopShadow(_darkModeProvider),
-                            blurRadius: 6,
-                            inset: true,
-                          ),
-                          BoxShadow(
-                            offset: const Offset(-4, -4),
-                            color: kCardBottomShadow(_darkModeProvider),
-                            blurRadius: 6,
-                            inset: true,
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 5),
-                                child: Text(
-                                  'memo',
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w900,
-                                  ),
-                                ),
-                              ),
-                              IconButton(
-                                onPressed: () async {
-                                  if (_darkModeProvider == true) {
-                                    _darkModeNotifier.state = false;
-                                  } else {
-                                    _darkModeNotifier.state = true;
-                                  }
-                                  final prefs =
-                                      await SharedPreferences.getInstance();
-                                  prefs.setBool(
-                                      'themeSetting', _darkModeNotifier.state);
-                                  setState(() {
-                                    prefs.getBool('themeSetting');
-                                  });
-                                  HapticFeedback.heavyImpact();
-                                },
-                                icon: Icon(
-                                  Icons.brightness_6_outlined,
-                                  color: kTextColor(_darkModeProvider),
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 8),
-                          Row(
-                            children: [
-                              Flexible(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: kCardColor(_darkModeProvider),
-                                    borderRadius: kMainBorderRadius,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: const Offset(-3, -3),
-                                        color:
-                                            kCardTopShadow(_darkModeProvider),
-                                        blurRadius: 3,
-                                        inset: true,
-                                      ),
-                                      BoxShadow(
-                                        offset: const Offset(3, 3),
-                                        color: kCardBottomShadow(
-                                            _darkModeProvider),
-                                        blurRadius: 3,
-                                        inset: true,
-                                      ),
-                                    ],
-                                  ),
-                                  child: TextField(
-                                    maxLength: null,
-                                    keyboardType: TextInputType.multiline,
-                                    controller: _textController,
-                                    onChanged: (value) {
-                                      temp = temp.copyWith(title: value);
-                                      print(_textController.text);
-                                    },
+                  GestureDetector(
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 4),
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.only(
+                          top: 10,
+                          bottom: 20,
+                          right: 17,
+                          left: 17,
+                        ),
+                        decoration: BoxDecoration(
+                          color: kCardColor(_darkModeProvider),
+                          borderRadius: kMainBorderRadius,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: const Offset(6, 6),
+                              color: kCardTopShadow(_darkModeProvider),
+                              blurRadius: 10,
+                              inset: true,
+                            ),
+                            BoxShadow(
+                              offset: const Offset(-4, -4),
+                              color: kCardBottomShadow(_darkModeProvider),
+                              blurRadius: 10,
+                              inset: true,
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 5),
+                                  child: Text(
+                                    'memo',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: kTextColor(_darkModeProvider),
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w900,
                                     ),
-                                    decoration: InputDecoration(
-                                      filled: false,
-                                      contentPadding:
-                                          const EdgeInsets.symmetric(
-                                        horizontal: 15,
-                                        vertical: 10,
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: kTextFieldBorderColor(
-                                            _darkModeProvider,
-                                          ),
-                                          width: 2,
+                                  ),
+                                ),
+                                IconButton(
+                                  onPressed: () async {
+                                    if (_darkModeProvider == true) {
+                                      _darkModeNotifier.state = false;
+                                    } else {
+                                      _darkModeNotifier.state = true;
+                                    }
+                                    final prefs =
+                                        await SharedPreferences.getInstance();
+                                    prefs.setBool('themeSetting',
+                                        _darkModeNotifier.state);
+                                    setState(() {
+                                      prefs.getBool('themeSetting');
+                                    });
+                                    HapticFeedback.heavyImpact();
+                                  },
+                                  icon: Icon(
+                                    Icons.brightness_6_outlined,
+                                    color: kTextColor(_darkModeProvider),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 8),
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: kCardColor(_darkModeProvider),
+                                      borderRadius: kMainBorderRadius,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: const Offset(-3, -3),
+                                          color:
+                                              kCardTopShadow(_darkModeProvider),
+                                          blurRadius: 3,
+                                          inset: true,
                                         ),
-                                        borderRadius: kMainBorderRadius,
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: kTextFieldBorderColor(
-                                            _darkModeProvider,
-                                          ),
-                                          width: 2,
+                                        BoxShadow(
+                                          offset: const Offset(3, 3),
+                                          color: kCardBottomShadow(
+                                              _darkModeProvider),
+                                          blurRadius: 3,
+                                          inset: true,
                                         ),
-                                        borderRadius: kMainBorderRadius,
+                                      ],
+                                    ),
+                                    child: TextField(
+                                      maxLength: null,
+                                      keyboardType: TextInputType.multiline,
+                                      controller: _textController,
+                                      onChanged: (value) {
+                                        temp = temp.copyWith(title: value);
+                                      },
+                                      onSubmitted: (value) async {
+                                        await _todoDatabaseNotifier
+                                            .writeData(temp);
+                                        HapticFeedback.heavyImpact();
+                                        temp = temp.copyWith(title: '');
+                                      },
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: kTextColor(_darkModeProvider),
+                                      ),
+                                      decoration: InputDecoration(
+                                        filled: false,
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                          horizontal: 15,
+                                          vertical: 10,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: kTextFieldBorderColor(
+                                              _darkModeProvider,
+                                            ),
+                                            width: 2,
+                                          ),
+                                          borderRadius: kMainBorderRadius,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: kTextFieldBorderColor(
+                                              _darkModeProvider,
+                                            ),
+                                            width: 2,
+                                          ),
+                                          borderRadius: kMainBorderRadius,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(width: 8),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
+                                const SizedBox(width: 8),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: cardButton(() async {
+                                    await _todoDatabaseNotifier.writeData(temp);
+                                    HapticFeedback.heavyImpact();
+                                    temp = temp.copyWith(title: '');
+                                  }, Icons.add,
+                                      kIconAddColor(_darkModeProvider)),
                                 ),
-                                child: cardButton(() async {
-                                  await _todoDatabaseNotifier.writeData(temp);
-                                  HapticFeedback.heavyImpact();
-                                  temp = temp.copyWith(title: '');
-                                }, Icons.add, kIconAddColor(_darkModeProvider)),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),

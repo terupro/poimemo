@@ -15,14 +15,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$poimemotateDataTearOff {
-  const _$poimemotateDataTearOff();
+class _$TodoDataTearOff {
+  const _$TodoDataTearOff();
 
-  _poimemotateData call(
+  _TodoData call(
       {bool isLoading = false,
       bool isReadyData = false,
       List<TodoItemData> todoItems = const []}) {
-    return _poimemotateData(
+    return _TodoData(
       isLoading: isLoading,
       isReadyData: isReadyData,
       todoItems: todoItems,
@@ -31,35 +31,33 @@ class _$poimemotateDataTearOff {
 }
 
 /// @nodoc
-const $poimemotateData = _$poimemotateDataTearOff();
+const $TodoData = _$TodoDataTearOff();
 
 /// @nodoc
-mixin _$poimemotateData {
+mixin _$TodoData {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isReadyData => throw _privateConstructorUsedError;
   List<TodoItemData> get todoItems => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $poimemotateDataCopyWith<poimemotateData> get copyWith =>
+  $TodoDataCopyWith<TodoData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $poimemotateDataCopyWith<$Res> {
-  factory $poimemotateDataCopyWith(
-          poimemotateData value, $Res Function(poimemotateData) then) =
-      _$poimemotateDataCopyWithImpl<$Res>;
+abstract class $TodoDataCopyWith<$Res> {
+  factory $TodoDataCopyWith(TodoData value, $Res Function(TodoData) then) =
+      _$TodoDataCopyWithImpl<$Res>;
   $Res call({bool isLoading, bool isReadyData, List<TodoItemData> todoItems});
 }
 
 /// @nodoc
-class _$poimemotateDataCopyWithImpl<$Res>
-    implements $poimemotateDataCopyWith<$Res> {
-  _$poimemotateDataCopyWithImpl(this._value, this._then);
+class _$TodoDataCopyWithImpl<$Res> implements $TodoDataCopyWith<$Res> {
+  _$TodoDataCopyWithImpl(this._value, this._then);
 
-  final poimemotateData _value;
+  final TodoData _value;
   // ignore: unused_field
-  final $Res Function(poimemotateData) _then;
+  final $Res Function(TodoData) _then;
 
   @override
   $Res call({
@@ -85,25 +83,21 @@ class _$poimemotateDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$poimemotateDataCopyWith<$Res>
-    implements $poimemotateDataCopyWith<$Res> {
-  factory _$poimemotateDataCopyWith(
-          _poimemotateData value, $Res Function(_poimemotateData) then) =
-      __$poimemotateDataCopyWithImpl<$Res>;
+abstract class _$TodoDataCopyWith<$Res> implements $TodoDataCopyWith<$Res> {
+  factory _$TodoDataCopyWith(_TodoData value, $Res Function(_TodoData) then) =
+      __$TodoDataCopyWithImpl<$Res>;
   @override
   $Res call({bool isLoading, bool isReadyData, List<TodoItemData> todoItems});
 }
 
 /// @nodoc
-class __$poimemotateDataCopyWithImpl<$Res>
-    extends _$poimemotateDataCopyWithImpl<$Res>
-    implements _$poimemotateDataCopyWith<$Res> {
-  __$poimemotateDataCopyWithImpl(
-      _poimemotateData _value, $Res Function(_poimemotateData) _then)
-      : super(_value, (v) => _then(v as _poimemotateData));
+class __$TodoDataCopyWithImpl<$Res> extends _$TodoDataCopyWithImpl<$Res>
+    implements _$TodoDataCopyWith<$Res> {
+  __$TodoDataCopyWithImpl(_TodoData _value, $Res Function(_TodoData) _then)
+      : super(_value, (v) => _then(v as _TodoData));
 
   @override
-  _poimemotateData get _value => super._value as _poimemotateData;
+  _TodoData get _value => super._value as _TodoData;
 
   @override
   $Res call({
@@ -111,7 +105,7 @@ class __$poimemotateDataCopyWithImpl<$Res>
     Object? isReadyData = freezed,
     Object? todoItems = freezed,
   }) {
-    return _then(_poimemotateData(
+    return _then(_TodoData(
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -130,8 +124,8 @@ class __$poimemotateDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_poimemotateData implements _poimemotateData {
-  _$_poimemotateData(
+class _$_TodoData implements _TodoData {
+  _$_TodoData(
       {this.isLoading = false,
       this.isReadyData = false,
       this.todoItems = const []});
@@ -148,14 +142,14 @@ class _$_poimemotateData implements _poimemotateData {
 
   @override
   String toString() {
-    return 'poimemotateData(isLoading: $isLoading, isReadyData: $isReadyData, todoItems: $todoItems)';
+    return 'TodoData(isLoading: $isLoading, isReadyData: $isReadyData, todoItems: $todoItems)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _poimemotateData &&
+            other is _TodoData &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
                 .equals(other.isReadyData, isReadyData) &&
@@ -171,15 +165,15 @@ class _$_poimemotateData implements _poimemotateData {
 
   @JsonKey(ignore: true)
   @override
-  _$poimemotateDataCopyWith<_poimemotateData> get copyWith =>
-      __$poimemotateDataCopyWithImpl<_poimemotateData>(this, _$identity);
+  _$TodoDataCopyWith<_TodoData> get copyWith =>
+      __$TodoDataCopyWithImpl<_TodoData>(this, _$identity);
 }
 
-abstract class _poimemotateData implements poimemotateData {
-  factory _poimemotateData(
+abstract class _TodoData implements TodoData {
+  factory _TodoData(
       {bool isLoading,
       bool isReadyData,
-      List<TodoItemData> todoItems}) = _$_poimemotateData;
+      List<TodoItemData> todoItems}) = _$_TodoData;
 
   @override
   bool get isLoading;
@@ -189,7 +183,7 @@ abstract class _poimemotateData implements poimemotateData {
   List<TodoItemData> get todoItems;
   @override
   @JsonKey(ignore: true)
-  _$poimemotateDataCopyWith<_poimemotateData> get copyWith =>
+  _$TodoDataCopyWith<_TodoData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

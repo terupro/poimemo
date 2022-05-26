@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poimemo/component/card.dart';
 import 'package:poimemo/model/db/db.dart';
+import 'package:poimemo/model/freezed/todo.dart';
 import 'package:poimemo/view_model/provider.dart';
 
 List<Widget> allCard(

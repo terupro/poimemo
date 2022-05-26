@@ -27,12 +27,18 @@ class MyApp extends ConsumerWidget {
       theme: _darkModeProvider
           ? ThemeData.dark().copyWith(
               textTheme: const TextTheme(
-                bodyText2: TextStyle(color: Colors.white70),
+                bodyText2: TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             )
           : ThemeData.light().copyWith(
               textTheme: const TextTheme(
-                bodyText2: TextStyle(color: Colors.black54),
+                bodyText2: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
 

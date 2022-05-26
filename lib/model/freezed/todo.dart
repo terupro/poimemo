@@ -4,13 +4,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'todo.freezed.dart';
 
 @freezed
-class poimemotateData with _$poimemotateData {
+class TodoData with _$TodoData {
   // DBの状態を保持するクラス
-  factory poimemotateData({
+  factory TodoData({
     @Default(false) bool isLoading,
     @Default(false) bool isReadyData,
     @Default([]) List<TodoItemData> todoItems,
-  }) = _poimemotateData;
+  }) = _TodoData;
 }
 
 @freezed
